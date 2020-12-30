@@ -5,6 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack",
+        "lint": "standard",
+        "vercel-build": "npm run build",
         "dev": "webpack-dev-server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -20,10 +22,30 @@
     },
     "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
     "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2",
         "html-webpack-plugin": "^3.2.0",
+        "standard": "^16.0.3",
         "webpack": "^4.33.0",
         "webpack-cli": "^3.3.3",
         "webpack-dev-server": "^3.7.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-icons": "^4.1.0",
+        "styled-components": "^5.2.1"
+    },
+    "standard": {
+        "ignore": [
+            "/api/**"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "./node_modules/standard/eslintrc.json"
+        ]
+    }
 }
