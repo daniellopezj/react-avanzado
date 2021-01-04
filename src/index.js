@@ -12,7 +12,6 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-  // eslint-disable-next-line react/jsx-filename-extension
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
