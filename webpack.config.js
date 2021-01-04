@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   output: {
-    filename: 'app.hundle.js'
+    filename: 'app.hundle.js',
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
