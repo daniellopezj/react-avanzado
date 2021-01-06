@@ -7,6 +7,7 @@
         "build": "webpack",
         "lint": "standard",
         "vercel-build": "npm run build",
+        "serve:dev": "webpack --mode 'development' && npx serve dist -s",
         "dev": "webpack-dev-server --history-api-fallback",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -30,7 +31,9 @@
         "standard": "^16.0.3",
         "webpack": "^4.33.0",
         "webpack-cli": "^3.3.3",
-        "webpack-dev-server": "^3.7.1"
+        "webpack-dev-server": "^3.7.1",
+        "webpack-pwa-manifest": "^4.3.0",
+        "workbox-webpack-plugin": "^6.0.2"
     },
     "dependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -38,9 +41,11 @@
         "apollo-boost": "^0.4.9",
         "graphql": "^15.4.0",
         "intersection-observer": "^0.12.0",
+        "prop-types": "^15.7.2",
         "react": "^17.0.1",
         "react-apollo": "^3.1.5",
         "react-dom": "^17.0.1",
+        "react-helmet": "^6.1.0",
         "react-icons": "^4.1.0",
         "styled-components": "^5.2.1"
     },
