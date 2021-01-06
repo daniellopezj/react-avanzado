@@ -18,7 +18,6 @@ query getFavs {
 const renderProp = ({ loading, error, data }) => {
   if (loading) return <p>loading...</p>
   if (error) return <p>Error!</p>
-  console.log(error)
   const { favs } = data
   return <ListOfFavs favs={favs} />
 }
