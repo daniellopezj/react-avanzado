@@ -3,7 +3,7 @@ import { GlobalStyle } from './styles/GlobalStyles'
 import { Logo } from './components/Logo'
 import { NavBar } from './components/NavBar'
 
-// import { Home } from './pages/Home'
+import { Home } from './pages/Home'
 // import { User } from './pages/User'
 // import { Favs } from './pages/Favs'
 // import { NotFound } from './pages/NotFound'
@@ -14,7 +14,7 @@ import { Context } from './Context'
 
 const Favs = React.lazy(() => import('./pages/Favs'))
 const User = React.lazy(() => import('./pages/User'))
-const Home = React.lazy(() => import('./pages/Home'))
+// const Home = React.lazy(() => import('./pages/Home'))
 
 const Detail = React.lazy(() => import('./pages/Detail'))
 const NotRegisteredUser = React.lazy(() => import('./pages/NotRegisteredUser'))
