@@ -8,11 +8,6 @@ mutation signup($input: UserCredentials!) {
 }
 `
 
-// const REGISTER = gql`
-// mutation signup($input: UserCredentials!) {
-//   signup (input: $input)
-// }
-// `
 export const RegisterMutation = ({ children }) => {
   return (
     <Mutation mutation={REGISTER}>

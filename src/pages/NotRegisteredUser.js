@@ -2,6 +2,7 @@ import React from 'react'
 import Context from '../Context'
 import { UserForm } from '../components/UserForm'
 import { RegisterMutation } from '../container/RegisterMutation'
+import { LoginMutation } from '../container/LoginMutation'
 
 export const NotRegisteredUser = () => (
   <Context.Consumer>
@@ -11,17 +12,32 @@ export const NotRegisteredUser = () => (
           <>
             <RegisterMutation>
               {
-                (register) => {
+                (register, { data, loading, error }) => {
                   const onSubmit = ({ email, password }) => {
                     const input = { email, password }
                     const variables = { input }
                     register({ variables }).then(activeAuth)
                   }
-                  return (<UserForm onSubmit={onSubmit} title='Registrarse' />)
+                  const errorMsg = error && 'El usuario ya existe o hay un problema'
+                  return (<UserForm disabled={loading} error={errorMsg} onSubmit={onSubmit} title='Registrarse' />)
                 }
               }
             </RegisterMutation>
-            <UserForm onSubmit={activeAuth} title='Iniciar Sesion' />
+            <LoginMutation>
+              {
+                (login, { data, loading, error }) => {
+                  const onSubmit = ({ email, password }) => {
+                    const input = { email, password }
+                    const variables = { input }
+                    login({ variables }).then(activeAuth)
+                  }
+                  const errorMsg = error && 'el usuario no existe o datos incorrectos'
+                  return (
+                    <UserForm disabled={loading} error={errorMsg} onSubmit={onSubmit} title='Iniciar Sesion' />
+                  )
+                }
+              }
+            </LoginMutation>
           </>
         )
       }
